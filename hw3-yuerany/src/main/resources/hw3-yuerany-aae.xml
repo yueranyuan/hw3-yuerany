@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>false</primitive>  
+  <delegateAnalysisEngineSpecifiers>
+    <delegateAnalysisEngine key="TestElementAnnotator">
+      <import name="descriptors.TestElementAnnotator"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="TokenAnnotator">
+      <import name="descriptors.TokenAnnotator"/>
+    </delegateAnalysisEngine>
+  <delegateAnalysisEngine key="WriteOutputAnnotator">
+      <import name="descriptors.WriteOutputAnnotator"/>
+    </delegateAnalysisEngine>
+  <delegateAnalysisEngine key="NGramAnnotator">
+      <import name="descriptors.NGramAnnotator"/>
+    </delegateAnalysisEngine>
+  <delegateAnalysisEngine key="ScoreAnnotator">
+      <import name="descriptors.ScoreAnnotator"/>
+    </delegateAnalysisEngine>
+  </delegateAnalysisEngineSpecifiers>
+  <analysisEngineMetaData>
+    <name>AnalyseQuestionAnnotator</name>
+    <description>The full analysis pipeline to score each answer for the question and evaluate the results</description>
+    <version>1.0</version>
+    <vendor>yuerany 11791 project</vendor>
+    <configurationParameters searchStrategy="language_fallback">
+      <configurationParameter>
+        <name>ScoringAlgorithm</name>
+        <description>The scoring algorithm used to score the answers.  Available algorithms:
+NGram fuzzy
+NGram basic</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+        <overrides>
+          <parameter>ScoreAnnotator/ScoringAlgorithm</parameter>
+        </overrides>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>ScoringAlgorithm</name>
+        <value>
+          <string>NGram fuzzy</string>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <flowConstraints>
+      <fixedFlow>
+        <node>TestElementAnnotator</node>
+        <node>TokenAnnotator</node>
+      <node>NGramAnnotator</node>
+      <node>ScoreAnnotator</node>
+      <node>WriteOutputAnnotator</node>
+      </fixedFlow>
+    </flowConstraints>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs>
+          <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Token</type>
+        <type allAnnotatorFeatures="true">edu.cmu.deiis.types.NGram</type>
+        <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Question</type>
+          <type allAnnotatorFeatures="true">edu.cmu.deiis.types.AnswerScore</type>
+          <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Answer</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+  <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>
