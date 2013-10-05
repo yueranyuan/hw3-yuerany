@@ -1,0 +1,18 @@
+<!-- copied from uima as examples -->
+
+<analysisEngineDeploymentDescription 
+  xmlns="http://uima.apache.org/resourceSpecifier">
+  
+  <name>hw3 annotator deploy</name>
+  <description>Deploys the hw3 ae</description>
+  
+  <deployment protocol="jms" provider="activemq">
+    <service>
+      <inputQueue endpoint="YueranyAnnotatorQueue" brokerURL="${defaultBrokerURL}"/>
+      <topDescriptor>
+       <import location="hw3-yuerany-aae.xml"/>
+      </topDescriptor>
+    </service>
+  </deployment>
+
+</analysisEngineDeploymentDescription>

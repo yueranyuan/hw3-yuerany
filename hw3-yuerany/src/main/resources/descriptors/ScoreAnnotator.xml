@@ -29,6 +29,7 @@ NGram basic</description>
     <typeSystemDescription>
       <imports>
         <import name="descriptors.deiis_types"/>
+      <import name="org.cleartk.TypeSystem"/>
       </imports>
     </typeSystemDescription>
     <typePriorities/>
@@ -39,6 +40,8 @@ NGram basic</description>
           <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Question</type>
           <type allAnnotatorFeatures="true">edu.cmu.deiis.types.NGram</type>
           <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Answer</type>
+        <type allAnnotatorFeatures="true">org.cleartk.ne.type.NamedEntity</type>
+          <type allAnnotatorFeatures="true">org.cleartk.ne.type.NamedEntityMention</type>
         </inputs>
         <outputs>
           <type allAnnotatorFeatures="true">edu.cmu.deiis.types.AnswerScore</type>

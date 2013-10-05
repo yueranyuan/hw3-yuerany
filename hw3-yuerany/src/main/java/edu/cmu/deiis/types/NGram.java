@@ -11,8 +11,8 @@ import org.apache.uima.jcas.cas.FSArray;
 
 
 /** 
- * Updated by JCasGen Fri Oct 04 21:20:27 EDT 2013
- * XML source: /home/yueran/git/hw3-yuerany/hw3-yuerany/src/main/resources/descriptors/TokenAnnotator.xml
+ * Updated by JCasGen Sat Oct 05 00:41:12 EDT 2013
+ * XML source: /home/yueran/git/hw3-yuerany/hw3-yuerany/src/main/resources/descriptors/ScoreAnnotator.xml
  * @generated */
 public class NGram extends Annotation {
   /** @generated
