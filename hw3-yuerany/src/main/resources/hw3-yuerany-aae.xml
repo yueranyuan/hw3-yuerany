@@ -9,9 +9,6 @@
     <delegateAnalysisEngine key="TokenAnnotator">
       <import name="descriptors.TokenAnnotator"/>
     </delegateAnalysisEngine>
-  <delegateAnalysisEngine key="WriteOutputAnnotator">
-      <import name="descriptors.WriteOutputAnnotator"/>
-    </delegateAnalysisEngine>
   <delegateAnalysisEngine key="NGramAnnotator">
       <import name="descriptors.NGramAnnotator"/>
     </delegateAnalysisEngine>
@@ -52,7 +49,6 @@ NGram basic</description>
         <node>TokenAnnotator</node>
       <node>NGramAnnotator</node>
       <node>ScoreAnnotator</node>
-      <node>WriteOutputAnnotator</node>
       </fixedFlow>
     </flowConstraints>
     <typePriorities/>

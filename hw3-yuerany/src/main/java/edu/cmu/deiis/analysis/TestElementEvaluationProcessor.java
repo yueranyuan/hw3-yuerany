@@ -54,8 +54,7 @@ public class TestElementEvaluationProcessor extends AbstractTestElementProcessor
    */
   @SuppressWarnings("unchecked")
   //we are feeding in the proper type so casting should not be an issue
-  @Override
-  public void process(JCas aJCas) throws AnalysisEngineProcessException {
+  public double score(JCas aJCas) throws AnalysisEngineProcessException {
     
     // STEP 1: sort the answers by score
     Iterator<AnswerScore> answerScoreIter = 
@@ -111,6 +110,8 @@ public class TestElementEvaluationProcessor extends AbstractTestElementProcessor
         correctAtN ++;
       }
     }
-    System.out.println(String.format("Precision at %d: %1.2f", N, ((double)correctAtN/N)));
+    double precision = ((double)correctAtN/N);
+    System.out.println(String.format("Precision at %d: %1.2f", N, precision));
+    return precision;
   }
 }
