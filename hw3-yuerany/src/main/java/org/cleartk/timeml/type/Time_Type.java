@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** 
- * Updated by JCasGen Mon Oct 07 20:15:55 EDT 2013
+ * Updated by JCasGen Mon Oct 07 21:36:24 EDT 2013
  * @generated */
 public class Time_Type extends Anchor_Type {
   /** @generated */

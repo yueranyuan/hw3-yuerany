@@ -4,7 +4,7 @@
   <primitive>true</primitive>  <annotatorImplementationName>edu.cmu.deiis.analysis.TokenAnnotator</annotatorImplementationName>
   <analysisEngineMetaData>
     <name>TokenAnnotator</name>
-    <description>Tokenizes input and annotates the document with tokens</description>
+    <description>Uses clearTK tokens and annotates the document with tokens</description>
     <version>1.0</version>
     <vendor>yuerany 11791 project</vendor>
     <configurationParameters/>

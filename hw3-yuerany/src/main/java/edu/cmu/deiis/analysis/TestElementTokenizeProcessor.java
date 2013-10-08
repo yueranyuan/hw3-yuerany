@@ -1,15 +1,9 @@
 package edu.cmu.deiis.analysis;
 
-import java.io.StringReader;
 import java.util.Iterator;
-import java.util.List;
-
-import edu.stanford.nlp.ling.Word;
-import edu.stanford.nlp.process.TokenizerFactory;
-import edu.stanford.nlp.process.PTBTokenizer.PTBTokenizerFactory;
-import edu.stanford.nlp.process.Tokenizer;
 
 import org.apache.uima.jcas.JCas;
+import org.cleartk.token.type.Token;
 
 import edu.cmu.deiis.types.Question;
 import edu.cmu.deiis.types.Answer;
@@ -17,7 +11,7 @@ import edu.cmu.deiis.types.Annotation;
 
 /**
  * This Processor creates token annotations for the sentences.  The tokenization is done using
- * the Stanford NLP Tokenizer.  Punctuation are tagged as tokens.
+ * the remote ClearTK tokens.  Punctuation are tagged as tokens.
  * @author yueran
  *
  */
@@ -37,28 +31,26 @@ public class TestElementTokenizeProcessor extends AbstractTestElementProcessor {
   }
   
   /**
-   * Create tokens using the Stanford NLP Tokenizer.  Punctuations are skipped.
+   * Read tokens from the remote Tokenizer.  Punctuations are skipped.
    * @param textAnnotation      The text to be tokenized
    * @param aJCas               UIMA Cas system used in the pipeline
    */
+  @SuppressWarnings("unchecked")
   private void annotateWithTokens(Annotation textAnnotation, JCas aJCas) {
-    TokenizerFactory<Word> factory = PTBTokenizerFactory.newTokenizerFactory();
-    Tokenizer<Word> tokenizer = factory.getTokenizer(new StringReader(textAnnotation.getCoveredText()));
-    List<Word> tokens = tokenizer.tokenize();
-    Iterator<Word> tokIter = tokens.iterator();
+    Iterator<Token> tokIter = getAnnotationsFromIndex(aJCas, Token.type);
     int annotationBegin = textAnnotation.getBegin();
     outerloop:
     while (tokIter.hasNext()) {
-      Word word = tokIter.next();
+      Token token = tokIter.next();
       // ignore stop words
       for (int i = 0; i < stopWords.length; i++) {
-        if (word.value().equals(stopWords[i])) {
+        if (token.getCoveredText().equals(stopWords[i])) {
           continue outerloop;
         }
       }
       tokenAnnotationFactory.Annotate(aJCas,
-              annotationBegin + word.beginPosition(),
-              annotationBegin + word.endPosition());
+              annotationBegin + token.getBegin(),
+              annotationBegin + token.getEnd());
     }
   }
 }

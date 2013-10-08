@@ -10,7 +10,7 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** 
- * Updated by JCasGen Mon Oct 07 20:15:55 EDT 2013
+ * Updated by JCasGen Mon Oct 07 21:36:24 EDT 2013
  * XML source: /home/yueran/git/hw3-yuerany/hw3-yuerany/src/main/resources/hw3-yuerany-aae.xml
  * @generated */
 public class Annotation extends org.apache.uima.jcas.tcas.Annotation {
