@@ -61,7 +61,11 @@ public class TestElementEvaluationProcessor extends AbstractTestElementProcessor
             (Iterator<AnswerScore>) getAnnotationsFromIndex(aJCas, AnswerScore.type);
     List<AnswerScore> answerScoreList = new ArrayList<AnswerScore>();
     while (answerScoreIter.hasNext()) {
-      answerScoreList.add(answerScoreIter.next());
+      AnswerScore answerScore = answerScoreIter.next();
+      // only take finalized scores
+      if (answerScore.getCasProcessorId().equals("AggregateAnswerScoreAnnotator")) {
+        answerScoreList.add(answerScore);
+      }
     }
     // the following few lines to sort the AnswerScore by score are inspired by
     // http://stackoverflow.com/questions/5805602/how-to-sort-list-of-objects-by-some-property

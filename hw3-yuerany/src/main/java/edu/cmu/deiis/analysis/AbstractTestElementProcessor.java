@@ -43,8 +43,8 @@ public abstract class AbstractTestElementProcessor {
    * @throws AnalysisEngineProcessException 
    */
   @SuppressWarnings("unchecked")
-  // we are feeding in the proper type so casting should not be an issue
-  public void process(JCas aJCas) throws AnalysisEngineProcessException {
+  //we are feeding in the proper type so casting should not be an issue
+  protected void process(JCas aJCas) throws AnalysisEngineProcessException {
 
     // process question
     Iterator<Question> questionIter = (Iterator<Question>) getAnnotationsFromIndex(aJCas,
@@ -63,6 +63,7 @@ public abstract class AbstractTestElementProcessor {
       Answer answer = (Answer) answerIter.next();
       processAnswer(answer, aJCas);
     }
+
   }
 
   /**

@@ -9,7 +9,7 @@ import edu.cmu.deiis.types.Annotation;
  *
  */
 public abstract class AbstractAnnotationFactory {
-  protected String annotatorName;
+  protected String AnnotatorName;
   protected boolean completelyConfident; // whether the annotator use probabilities 
   
   /**
@@ -20,7 +20,7 @@ public abstract class AbstractAnnotationFactory {
    */
   public AbstractAnnotationFactory(String annotatorName, boolean completelyConfident) {
     this.completelyConfident = completelyConfident;
-    this.annotatorName = annotatorName;
+    this.AnnotatorName = annotatorName;
   }
   
   /**
@@ -29,7 +29,7 @@ public abstract class AbstractAnnotationFactory {
    */
   public AbstractAnnotationFactory(String annotatorName) {
     this.completelyConfident = false;
-    this.annotatorName = annotatorName;
+    this.AnnotatorName = annotatorName;
   }
   
   /**
@@ -43,7 +43,7 @@ public abstract class AbstractAnnotationFactory {
   public void AnnotationHelper(Annotation annotation, int begin, int end, double confidence) {
     annotation.setBegin(begin);
     annotation.setEnd(end);
-    annotation.setCasProcessorId(annotatorName);
+    annotation.setCasProcessorId(AnnotatorName);
     annotation.setConfidence(confidence);
     annotation.addToIndexes();
   }
@@ -60,7 +60,7 @@ public abstract class AbstractAnnotationFactory {
   public void AnnotationHelper(Annotation annotation, int begin, int end) {
     annotation.setBegin(begin);
     annotation.setEnd(end);
-    annotation.setCasProcessorId(annotatorName);
+    annotation.setCasProcessorId(AnnotatorName);
     if (completelyConfident) {
       annotation.setConfidence(1.0);
     }

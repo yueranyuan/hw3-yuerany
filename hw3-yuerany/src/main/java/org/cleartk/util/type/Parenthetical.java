@@ -11,8 +11,8 @@ import org.cleartk.score.type.ScoredAnnotation;
 
 
 /** 
- * Updated by JCasGen Sat Oct 05 00:41:12 EDT 2013
- * XML source: /home/yueran/git/hw3-yuerany/hw3-yuerany/src/main/resources/descriptors/ScoreAnnotator.xml
+ * Updated by JCasGen Mon Oct 07 20:15:55 EDT 2013
+ * XML source: /home/yueran/git/hw3-yuerany/hw3-yuerany/src/main/resources/hw3-yuerany-aae.xml
  * @generated */
 public class Parenthetical extends ScoredAnnotation {
   /** @generated

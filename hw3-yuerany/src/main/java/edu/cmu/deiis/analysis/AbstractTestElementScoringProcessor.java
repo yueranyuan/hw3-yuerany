@@ -7,8 +7,8 @@ package edu.cmu.deiis.analysis;
  *
  */
 public abstract class AbstractTestElementScoringProcessor extends AbstractTestElementProcessor {
-  public static String AnnotatorName = "ScoreAnnotator";
-  protected static AnswerScoreAnnotationFactory answerScoreAnnotationFactory = 
+  public String AnnotatorName = "ScoreAnnotator";
+  protected AnswerScoreAnnotationFactory answerScoreAnnotationFactory = 
           new AnswerScoreAnnotationFactory(AnnotatorName);
 
 }

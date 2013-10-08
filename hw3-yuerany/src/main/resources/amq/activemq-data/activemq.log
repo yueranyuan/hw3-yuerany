@@ -1,0 +1,33 @@
+2013-10-07 20:38:31,175 [main           ] INFO  BrokerService                  - Using Persistence Adapter: MemoryPersistenceAdapter
+2013-10-07 20:38:31,188 [main           ] INFO  BrokerService                  - ActiveMQ 5.4.1 JMS Message Broker (localhost) is starting
+2013-10-07 20:38:31,188 [main           ] INFO  BrokerService                  - For help or more information please see: http://activemq.apache.org/
+2013-10-07 20:38:31,348 [JMX connector  ] INFO  ManagementContext              - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+2013-10-07 20:38:31,425 [main           ] INFO  TransportServerThreadSupport   - Listening for connections at: tcp://aaron.linux:61616
+2013-10-07 20:38:31,426 [main           ] INFO  TransportConnector             - Connector openwire Started
+2013-10-07 20:38:31,428 [main           ] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:aaron.linux-37036-1381192711211-0:0) started
+2013-10-07 20:42:17,098 [127.0.0.1:44290] WARN  Service                        - Async error occurred: java.lang.IllegalStateException: Cannot remove a consumer from a connection that had not been registered: ID:aaron.linux-45239-1381192817624-0:1
+java.lang.IllegalStateException: Cannot remove a consumer from a connection that had not been registered: ID:aaron.linux-45239-1381192817624-0:1
+	at org.apache.activemq.broker.TransportConnection.processRemoveConsumer(TransportConnection.java:563)
+	at org.apache.activemq.command.RemoveInfo.visit(RemoveInfo.java:76)
+	at org.apache.activemq.broker.TransportConnection.service(TransportConnection.java:309)
+	at org.apache.activemq.broker.TransportConnection$1.onCommand(TransportConnection.java:185)
+	at org.apache.activemq.transport.TransportFilter.onCommand(TransportFilter.java:69)
+	at org.apache.activemq.transport.WireFormatNegotiator.onCommand(WireFormatNegotiator.java:113)
+	at org.apache.activemq.transport.InactivityMonitor.onCommand(InactivityMonitor.java:228)
+	at org.apache.activemq.transport.TransportSupport.doConsume(TransportSupport.java:83)
+	at org.apache.activemq.transport.tcp.TcpTransport.doRun(TcpTransport.java:219)
+	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:201)
+	at java.lang.Thread.run(Thread.java:722)
+2013-10-07 20:44:26,578 [MQ ShutdownHook] INFO  BrokerService                  - ActiveMQ Message Broker (localhost, ID:aaron.linux-37036-1381192711211-0:0) is shutting down
+2013-10-07 20:44:26,578 [Thread-2       ] INFO  BrokerService                  - ActiveMQ Message Broker (localhost, ID:aaron.linux-37036-1381192711211-0:0) is shutting down
+2013-10-07 20:44:26,579 [Thread-2       ] INFO  TransportConnector             - Connector openwire Stopped
+2013-10-07 20:44:26,591 [Thread-2       ] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:aaron.linux-37036-1381192711211-0:0) stopped
+2013-10-07 20:44:28,055 [MQ ShutdownHook] INFO  TransportConnector             - Connector openwire Stopped
+2013-10-07 20:44:28,055 [MQ ShutdownHook] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:aaron.linux-37036-1381192711211-0:0) stopped
+2013-10-07 20:44:31,486 [main           ] INFO  BrokerService                  - Using Persistence Adapter: MemoryPersistenceAdapter
+2013-10-07 20:44:31,489 [main           ] INFO  BrokerService                  - ActiveMQ 5.4.1 JMS Message Broker (localhost) is starting
+2013-10-07 20:44:31,489 [main           ] INFO  BrokerService                  - For help or more information please see: http://activemq.apache.org/
+2013-10-07 20:44:31,510 [JMX connector  ] INFO  ManagementContext              - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+2013-10-07 20:44:31,658 [main           ] INFO  TransportServerThreadSupport   - Listening for connections at: tcp://aaron.linux:61616
+2013-10-07 20:44:31,658 [main           ] INFO  TransportConnector             - Connector openwire Started
+2013-10-07 20:44:31,705 [main           ] INFO  BrokerService                  - ActiveMQ JMS Message Broker (localhost, ID:aaron.linux-34791-1381193071509-0:0) started

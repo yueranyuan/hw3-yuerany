@@ -10,7 +10,7 @@
     <service>
       <inputQueue endpoint="YueranyAnnotatorQueue" brokerURL="${defaultBrokerURL}"/>
       <topDescriptor>
-       <import location="hw3-yuerany-aae.xml"/>
+       <import location="hw3-yuerany-aae-as.xml"/>
       </topDescriptor>
     </service>
   </deployment>

@@ -12,8 +12,11 @@
   <delegateAnalysisEngine key="NGramAnnotator">
       <import name="descriptors.NGramAnnotator"/>
     </delegateAnalysisEngine>
-  <delegateAnalysisEngine key="ScoreAnnotator">
-      <import name="descriptors.ScoreAnnotator"/>
+  <delegateAnalysisEngine key="NgramScoreAnnotator">
+      <import name="descriptors.NgramScoreAnnotator"/>
+    </delegateAnalysisEngine>
+  <delegateAnalysisEngine key="AggregateScoreAnnotator">
+      <import name="descriptors.AggregateScoreAnnotator"/>
     </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
@@ -31,7 +34,7 @@ NGram basic</description>
         <multiValued>false</multiValued>
         <mandatory>true</mandatory>
         <overrides>
-          <parameter>ScoreAnnotator/ScoringAlgorithm</parameter>
+          <parameter>NgramScoreAnnotator/ScoringAlgorithm</parameter>
         </overrides>
       </configurationParameter>
     </configurationParameters>
@@ -48,7 +51,8 @@ NGram basic</description>
         <node>TestElementAnnotator</node>
         <node>TokenAnnotator</node>
       <node>NGramAnnotator</node>
-      <node>ScoreAnnotator</node>
+      <node>NgramScoreAnnotator</node>
+      <node>AggregateScoreAnnotator</node>
       </fixedFlow>
     </flowConstraints>
     <typePriorities/>
